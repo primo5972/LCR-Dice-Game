@@ -1,0 +1,253 @@
+#include "stdafx.h"																									//Included the standard header
+#include "stdio.h"																									//Included the header for standard input output
+#include <iostream>																									//Included iostream
+#include <string>																									//Included for string usability
+#include "stdlib.h"																									//Included the standard library header
+#include "time.h"																									//Included the time header
+#include <sstream>																									//Included string stream for strings
+#include "playerChips.h"
+#include <fstream>																							        //Included the extra header for global variables
+#include <ctime>
+#include "Dice.h"
+
+using namespace std;																								//Using the standard namespace
+
+int playerDie();																									
+int progRules();																									
+int positionAssigner();																								
+int playerSayer();																									
+int die1;
+int die2;
+int die3;
+int total;
+
+int main()																											//The main program
+{
+	cout << "Welcome to LCR! Left Center Right" << endl;																				//Displays the options of the game.
+	cout << "Press 1 to play" << endl;																				
+	cout << "Press 2 to display the rules" << endl;																	
+	cout << "Press 3 to assign positions" << endl;																	
+	cout << "Press 4 to designate how many people will play the game" << endl;											
+
+	int y = 0;
+	cin >> y;
+	if (y == 1) {
+		playerDie();
+	}
+	else {
+	}
+	if (y == 2) {
+		progRules();
+	}
+	else {
+	}
+	if (y == 3) {
+		positionAssigner();
+	}
+	else {
+	}
+	if (y == 4) {
+		playerSayer();
+	}
+	else {
+	}
+
+	return 0;
+}
+
+// Diplays the rules of the of the program when called upon.
+
+int progRules()
+{																									
+	cout << "Left Center Right (LCR) is a multiplayer dice game with a minimum of three players, but no upper limit" << endl;
+	cout << "on the number of participants.The goal is to win all of the chips." << endl;
+	cout << "The Dice" << endl;
+	cout << "There are three dice rolled each turn.Each die has the letters L, C, and R on it along with dots on" << endl;
+	cout << "the remaining three sides.These dice determine where the player’s chips will go." << endl;
+	cout << "For each L, the player must pass one chip to the player sitting to the left." << endl;
+	cout << "For each R, the player must pass one chip to the player sitting to the right." << endl;
+	cout << "For each C, the player must place one chip into the center potand those chips are now" << endl;
+	cout << "out of play." << endl;
+	cout << "Dots are neutraland require no action to be taken for that die." << endl;
+	cout << "The Chips" << endl;
+	cout << "Each player will start with three chips." << endl;
+	cout << "If a player only has one chip, he / she rolls only one die.If a player has two chips left, he / she rolls" << endl;
+	cout << "two dice.Once a player is out of chips, he / she is still in the game(as he / she may get chips" << endl;
+	cout << "passed to him / her), but passes the dice to the next player." << endl;
+	cout << "Winning the Game" << endl;
+	cout << "The winner is the last player with chips." << endl;
+
+
+	string l;
+	cout << "Press x to leave" << endl;
+	std::cin >> l;
+	if (l == "x") {
+		exit(0);
+	}
+	else {
+	}
+	cout << "Okay" << endl;
+
+
+	return 2;
+}
+
+
+                                                                                                                     //Diplays the rand function for determining the first dice's outcome.
+
+
+
+int Dice::rollDice()
+{
+	sideRolled = (rand() % 6) + 1;                                                                                  //determine the side rolled
+	die1 = ((rand() % 6) + 1);
+	die2 = ((rand() % 6) + 1);
+	die3 = ((rand() % 6) + 1);
+	total = (die1 + die2 + die3);
+	return sideRolled;
+}
+
+                                                                                                                    //The actual functions of the game
+                                                                                                                    //First of the if statement branch
+                                                                                                                    //Used to declare what the function dice1() will produce
+int playerDie() {
+	int playerDie = total;
+
+
+	cout << "Press 4 to roll all of player one's dice" << endl;
+	int g = 0;
+	cin >> g;
+	while (g == 4) {
+		if (playerDie = 6 == 5 == 4) {
+			cout << playerDie << endl;
+			cout << "You rolled a: " << endl;
+			cout << "Nothing happens" << endl;
+
+			cout << "Okay, now it's player 2's turn" << endl;
+			cout << "Press 4 to roll all of player 2's dice" << endl;
+			string i;	
+			
+			cin >> i;
+			if (i == "4") {
+				if (int playerDie = 6 == 5 == 4) {																   //Second facet of the if statement branch
+					cout << "You rolled a: " << endl;
+					cout << "Nothing happens" << endl;
+
+
+					string i;																						
+					cout << "Okay, now it's player 3's turn" << endl;
+					cout << "Press 4 to roll all of player 3's dice" << endl;
+					cin >> i;
+					if (i == "4") {
+						switch (playerDie) {
+						case (1):
+						{
+							cout << "If you rolled either 6, 5, or 4 on your roll" << endl;
+							cout << "Nothing happens" << endl;
+
+							cout << "We will now start the next turn" << endl;
+							int main();
+							break;
+						}
+						case (2):
+						{
+							cout << "You rolled either 6, 5, or 4 on your roll" << endl;
+							cout << "Nothing happens" << endl;
+
+							cout << "We will now start the next turn" << endl;
+							int main();
+							break;
+						}
+						case (3):
+						{
+							cout << "You rolled either 6, 5, or 4 on your roll" << endl;
+							cout << "Nothing happens" << endl;
+
+							cout << "We will now start the next turn" << endl;
+							int main();
+							break;
+						}
+						case (4):
+						{
+							cout << "You rolled a 1 on your first roll" << endl;
+							cout << "A chip will go to the player on the left" << endl;
+							player3Chips = player3Chips - 1;
+							player2Chips = player2Chips + 1;
+
+							cout << "We will now start the next turn" << endl;
+							int main();
+							break;
+						}
+						case (5):
+						{
+							cout << "You rolled a 2 on your first roll" << endl;
+							cout << "A chip will go to the player on the right" << endl;
+
+							cout << "We will now start the next turn" << endl;
+							int main();
+							break;
+						}
+						case (6):
+						{
+							cout << "You rolled a 3 on your first roll" << endl;
+							cout << "A chip will go to the player on the right" << endl;
+
+							cout << "We will now start the next turn" << endl;
+							int main();
+							break;
+						}
+						default:
+						
+
+	int playerSayer(); 
+	{																									//This function allows the user to define how many could play the game
+	cout << "Please enter how many players will play for this session" << endl;										//allows the user to define how many players will play the game.
+	cout << "There has to be a minimum of three" << endl;															
+	int v = 0;																										
+	cin >> v;																										
+	if (v > 3) {																									
+		cout << "You entered " << v << endl;																		
+	}																												
+	return 0;																									
+}																													
+
+
+	int positionAssigner();
+	{																							//Created to try to assign positions to all players
+	cout << "Categories for determining player's position within LCR:" << endl;
+	cout << "Type Normal for P1 on Left, P2 in Center, & P3 on Right" << endl;
+	cout << "Type Flipped for P3 on Left, P2 in Center, & P1 on Right" << endl;
+
+	string e;
+	string r;
+
+	cin >> e;
+	if (e == "Normal") 
+	{
+		player1Chips = player1Chips;
+		player2Chips = player2Chips;
+		player3Chips = player3Chips;
+	}
+	cin >> r;
+	if (r == "Flipped")
+	{
+		player1Chips = player3Chips;
+		player2Chips = player2Chips;
+		player3Chips = player1Chips;
+	}
+
+	}
+	return player1Chips + player2Chips + player3Chips;																//Returns the chip values and player positions
+};
+
+	int gameRepeater();
+	{																								//Used to show the current score
+		cout << "Let's show the total score as of now after the first round" << endl;									//Developed to run upon completion of the game.
+		cout << player1Chips << " = player1's Chips" << endl;
+		cout << player2Chips << " = player2's Chips" << endl;
+		cout << player3Chips << " = player3's Chips" << endl;
+		cout << endl;
+
+		int main();
+		return player1Chips + player2Chips + player3Chips;
+	}
